@@ -4,11 +4,18 @@ const port = 3000;
 const app = express();
 const dishesRouter = require("./routes/dishes");
 const chefsRouter = require("./routes/chefs");
+const notFound = require('./Middleware/not-found');
+const errorHandlerMiddleware = require('./Middleware/error-handler');
 // connect db
 const connectDB = require('./db/connect');
-/* */
+
+// Middleware
+app.use(express.json());
+
 // Routes
 app.use("/api/v1/", dishesRouter, chefsRouter);
+app.use(notFound);
+app.use(errorHandlerMiddleware);
 
 const start = async () => {
     try {

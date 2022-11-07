@@ -12,12 +12,6 @@ const orderSchema = mongoose.Schema({
         required: true,
         minLength: 3,
     },
-    ChefName: {
-        type: String,
-        required: true,
-        minLength: 3,
-        maxLength: 30
-    },
     CustomerName: {
         type: String,
         required: true,

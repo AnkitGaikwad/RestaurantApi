@@ -7,8 +7,8 @@ const Dish = require('./Models/Dish');
 function createDishesTableData(chefsData) {
     let dishes = [];
     for (let i = 0; i < chefsData.length; i++) {
-        let tempDish = {};
         for (let j = 0; j < chefsData[i].Speciality.length; j++) {
+            let tempDish = {};
             tempDish.Name = chefsData[i].Speciality[j];
             tempDish.TypeChef = chefsData[i].TypeChef;
             dishes.push(tempDish);
